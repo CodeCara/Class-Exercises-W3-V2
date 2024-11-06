@@ -403,16 +403,13 @@ const secondProduct = new PersonalCareProduct ('id2', 'secProd', 15, '1 year');
 class University
 {constructor(uniName, [])
 
-{this.uniName=Uniname;
+{this.uniName=uniName;
 this.departments=[];
 }
-addDept(){
+addDept(department){
 this.departments.push(department);
 console.log(this.name);
 console.log(this.department);
-
-
-
 
 }
 
@@ -420,12 +417,36 @@ removeDept(department){
 const index = this.departments.indexOf(department);
 this.departments.splice(index, 1);
 
+}
+
+displayDepts(){
+
+    console.log(this.departments);
+}
 
 }
 
 let Uni1 = new University('harvard', []);
 let Uni2 = new University('stanford', []);
 
-
-
 console.log(Uni1);
+Uni1.addDept('science');
+console.log(Uni1);
+Uni1.addDept('finance');
+console.log(Uni1);
+
+Uni1.removeDept('science');
+console.log(Uni1);
+
+
+Uni1.addDept('hr');
+console.log(Uni1);
+
+Uni1.addDept('research');
+console.log(Uni1);
+
+
+Uni1.displayDepts();
+
+//currently updating previously console logged Objs 
+//to reflect current changes - not sure why - working otherwise
